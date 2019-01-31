@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Subscribe from './Subscribe'
 
 
 //Components
 import Featured from './Featured';
+import Subscribe from './Subscribe'
+import Blocks from './Blocks'
+
 
 const URL_HOME = ' http://localhost:3004/home';
 
@@ -51,6 +53,7 @@ export default class Home extends Component {
                 <div>
                     <Featured slides={this.state.home.slider}/>
                     <Subscribe/>
+                    <Blocks blocks={this.state.home.blocks}/>
                 </div>
                 )
         }
