@@ -3,12 +3,13 @@ body{
     padding: 0;
     font-family: 'Roboto';
     color: #1b1b1b;
+
 }
 
+html {
+    height: 100%
+}
 .flexbox-container{
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: -moz-flex;
     display: flex;
 }
 
@@ -36,11 +37,15 @@ h4{
 header{
     border-bottom: 1px solid #e2e2e2;
 }
+header a{
+    color: #fff;
+}
 
 header, footer{
-    background: #fff;
+    background: #1f1f1f;
     align-items: center;
     padding:  10px;
+    font-size: 17px;
     font-family: 'Fjalla One';
 }
 
@@ -60,4 +65,13 @@ header .logo span, footer .logo span{
 footer{
     background: #1f1f1f;
     margin-top: 30px;
+}
+
+/* ============================ */
+            Slider
+/* ============================ */
+.spinner{
+    display: flex;
+    align-items: center;
+    align-content: center;
 }

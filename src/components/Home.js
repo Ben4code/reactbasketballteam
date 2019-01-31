@@ -5,13 +5,14 @@ import axios from 'axios';
 //Components
 import Featured from './Featured';
 
-const URL_HOME = ' http://localhost:3009/home';
+const URL_HOME = ' http://localhost:3004/home';
 
 export default class Home extends Component {
 
 
     state={
-        home: ''
+        home: '',
+        waiting: true
     }
 
     componentDidMount() {
@@ -19,17 +20,37 @@ export default class Home extends Component {
         axios.get(URL_HOME)
         .then(res =>{
             this.setState({
-                home: res.data
+                home: res.data,
             })
+            setTimeout(()=>{
+                this.setState({
+                    waiting: false
+                })
+            }, 800)
         })
     }
 
 
     render() {
-        return (
-            <div>
-                <Featured slides={this.state.home.slider}/>
-            </div>
-        )
+        if(this.state.waiting){
+            const spinner ={
+                display: 'flex',
+                alignItems: 'center',
+                alignContent: 'center',
+                height: '85vh',
+                postion: 'relative'
+            }
+            return (
+                <div style={spinner}>
+                    <img style={{position: 'absolute', left: '42%'}} src="/images/spinner.gif" alt="spinner"/>
+                </div>
+                )
+        }else{
+            return (
+                <div>
+                    <Featured slides={this.state.home.slider}/>
+                </div>
+                )
+        }
     }
 }
