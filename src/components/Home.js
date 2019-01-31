@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import Subscribe from './Subscribe'
 
 
 //Components
@@ -49,6 +50,7 @@ export default class Home extends Component {
             return (
                 <div>
                     <Featured slides={this.state.home.slider}/>
+                    <Subscribe/>
                 </div>
                 )
         }
