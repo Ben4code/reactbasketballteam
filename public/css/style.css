@@ -114,7 +114,7 @@ footer{
 
 
 /* ============================ */
-Blocks 
+            Blocks 
 /* ============================ */
  .homeBlocks{
     display: flex;
@@ -172,3 +172,36 @@ Blocks
     opacity: 0;
     transition: all 500ms ease-in-out; 
 }
+
+
+/* ============================ */
+            Polls
+/* ============================ */
+.homePoll{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+.homePoll h3{
+    text-align: center;
+}
+.pollContainer{
+    display: flex;
+}
+
+.pollContainer .pollItem{
+    padding: 20px;
+    flex-grow: 1;
+    text-align: center;
+}
+.pollContainer .pollItem img{
+    width: 80%;
+    cursor: pointer;
+}
+
+.pollContainer .pollItem div{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 18px;
+
+}
+
