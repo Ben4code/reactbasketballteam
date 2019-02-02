@@ -205,3 +205,42 @@ footer{
 
 }
 
+
+/* ============================ */
+            Teams
+/* ============================ */
+.teamsComponent{
+    min-height: 800px;
+}
+.teamsInput{
+    text-align: center;
+    padding: 20px 0;
+    background: #e6e6e6;
+}
+.teamsInput input{
+    font-family: 'Roboto';
+    border-radius: 30px;
+    border: 1px solid lightgray;
+    color: #000;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 300;
+    text-align: center;
+}
+.teamsInput input:focus{
+    outline: none;
+}
+.teamsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 100px
+}
+.teamsContainer .teamItem{
+    width: 25%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.teamsContainer .teamItem img{
+    width: 10%;
+}
