@@ -8,8 +8,6 @@ import Data from '../db.json'
 
 export default class Teams extends Component {
 
-    URL_TEAMS = 'http://localhost:3004/teams';
-
     componentDidMount() {
         this.setState({
             teams: Data.teams,

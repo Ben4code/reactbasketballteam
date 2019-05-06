@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import axios from 'axios';
+
 
 //Data
 import Data from '../db.json'
@@ -10,8 +10,6 @@ import Subscribe from './Subscribe'
 import Blocks from './Blocks'
 import Poll from './Poll';
 
-
-// const URL_HOME = ' http://localhost:3004/home';
 
 export default class Home extends Component {
 
@@ -31,20 +29,6 @@ export default class Home extends Component {
             })
         }, 800)
         
-        
-
-        // axios.get(URL_HOME)
-        // .then(res =>{
-        //     this.setState({
-        //         home: res.data,
-        //     })
-            
-        //     setTimeout(()=>{
-        //         this.setState({
-        //             waiting: false
-        //         })
-        //     }, 800)
-        // })
     }
 
 
