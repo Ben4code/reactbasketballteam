@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import axios from 'axios';
+
+
+//Data
+import Data from '../db.json'
+
 
 export default class Poll extends Component {
-
-    URL_POLL = 'http://localhost:3004/teams';
-
     state = { pollTeams: [] }
 
     componentDidMount() {
@@ -13,19 +14,29 @@ export default class Poll extends Component {
     }
 
     getPoll = () => {
-        //initialize api request
-        axios.get(`${this.URL_POLL}?poll=true&_sort=count&_order=desc`)
-            .then(res => {
-                this.setState({ pollTeams: res.data })
+        
+        if(Data.home){
+            //Get temas with poll === true
+            const getTeams = Data.teams.filter(team =>{
+                return team.poll === "true";
             })
+            
+            //Sort poll teams.
+            getTeams.sort(function(a, b){
+                return a.count-b.count
+            }).reverse();
+            this.setState({ pollTeams: getTeams})
+        }
     }
 
     addCount = (count, id) => {
         //Shorter alternative with patch compared to using get/put.
-        axios.patch(`${this.URL_POLL}/${id}`, {'count': count + 1})
-        .then( () =>{
-            this.getPoll();
+        const statePolls = this.state.pollTeams;
+
+        statePolls.map(pollTeam => {
+            return pollTeam.id === id ? pollTeam.count++ : '' ;
         })
+        this.setState({pollTeams: statePolls});
     }
 
     renderPoll = () => {

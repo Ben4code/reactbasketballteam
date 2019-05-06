@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
+//Data
+import Data from '../db.json'
 
-const URL_TEAM = 'http://localhost:3004/teams';
 
 export default class Team extends Component {
   
@@ -11,11 +11,12 @@ export default class Team extends Component {
   }
 
   componentDidMount(){
-    axios.get(`${URL_TEAM}/?name=${this.props.match.params.id}`)
-    .then(res =>{
-      console.log(res.data)
-      this.setState({ data: res.data})
+
+    const poll = Data.teams.filter(team => {
+      return team.name === this.props.match.params.id;
     })
+    this.setState({data: poll});
+    
   }
   
   showSquad = (squad) =>{

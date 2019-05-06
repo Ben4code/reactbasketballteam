@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "animate.css": "^3.7.0",
-    "axios": "^0.18.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-reveal": "^1.2.2",

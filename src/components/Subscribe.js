@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 export default class Subscribe extends Component {
     state = {
@@ -13,17 +13,18 @@ export default class Subscribe extends Component {
     }
 
     submitInput = (e) => {
-        const URL_EMAIL = 'http://localhost:3004/subcriptions'
+        //const URL_EMAIL = 'http://localhost:3004/subcriptions'
         e.preventDefault();
         const email = this.state.email.trim();
         let regex = /\S+@\S+\.\S+/;
         //let regex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
         if (regex.test(email)) {
-            axios.post(URL_EMAIL, { email: email })
-                .then(res => {
-                    console.log(res.data)
-                    this.setState({ email: '', success: true, error: false })
-                })
+            this.setState({ email: '', success: true, error: false })
+            // axios.post(URL_EMAIL, { email: email })
+            //     .then(res => {
+            //         console.log(res.data)
+            //         this.setState({ email: '', success: true, error: false })
+            //     })
         } else {
             this.setState({ error: true, success: false })
         }

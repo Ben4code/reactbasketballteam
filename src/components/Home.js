@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
 
+//Data
+import Data from '../db.json'
 
 //Components
 import Featured from './Featured';
@@ -9,7 +11,7 @@ import Blocks from './Blocks'
 import Poll from './Poll';
 
 
-const URL_HOME = ' http://localhost:3004/home';
+// const URL_HOME = ' http://localhost:3004/home';
 
 export default class Home extends Component {
 
@@ -20,18 +22,29 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-
-        axios.get(URL_HOME)
-        .then(res =>{
+        
+        setTimeout(()=>{
+            
             this.setState({
-                home: res.data,
+                home: Data.home,
+                waiting: false
             })
-            setTimeout(()=>{
-                this.setState({
-                    waiting: false
-                })
-            }, 800)
-        })
+        }, 800)
+        
+        
+
+        // axios.get(URL_HOME)
+        // .then(res =>{
+        //     this.setState({
+        //         home: res.data,
+        //     })
+            
+        //     setTimeout(()=>{
+        //         this.setState({
+        //             waiting: false
+        //         })
+        //     }, 800)
+        // })
     }
 
 

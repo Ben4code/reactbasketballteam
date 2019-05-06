@@ -232,13 +232,13 @@ footer{
 }
 .teamsContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 100px 0 100px 0;
 }
 .teamsContainer .teamItem{
     width: 25%;
-    padding: 30px;
     box-sizing: border-box;
 }
 .teamsContainer .teamItem img{

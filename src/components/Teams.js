@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import axios from 'axios';
 import { Spring } from 'react-spring'
 import { Link } from 'react-router-dom';
+
+//Data
+import Data from '../db.json'
 
 
 export default class Teams extends Component {
@@ -9,13 +11,10 @@ export default class Teams extends Component {
     URL_TEAMS = 'http://localhost:3004/teams';
 
     componentDidMount() {
-        axios.get(this.URL_TEAMS)
-            .then(res => {
-                this.setState({
-                    teams: res.data,
-                    filtered: res.data,
-                })
-            })
+        this.setState({
+            teams: Data.teams,
+            filtered: Data.teams
+        })
     }
 
     state = {
